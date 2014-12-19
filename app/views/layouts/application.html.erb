@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<%= yield %>
+  <a href = "<%= restaurants_path %>"><h1>ALL THE RESTAURANTS</h1></a>
+  <a href="<%= new_restaurant_path %>"><h2>New Restaurant<h2></a>
+
+  <% if notice %>
+    <p><%= notice %></p>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

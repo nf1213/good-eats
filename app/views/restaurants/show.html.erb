@@ -1,0 +1,21 @@
+<h1><%= @restaurant.name %></h1>
+<ul>
+  <li>Address: <%= @restaurant.address %></li>
+  <li>City: <%= @restaurant.city %></li>
+  <li>State: <%= @restaurant.state %></li>
+  <li>Zip: <%= @restaurant.zip %></li>
+</ul>
+
+<%= link_to "Review this", new_restaurant_review_path(@restaurant.id) %>
+
+<h3>Reviews</h3>
+
+<ul>
+  <% @restaurant.reviews.each do |r| %>
+    <li>Rating: <%= r.rating %>
+      <% if r.comment != "" %>
+       | Comment: <%= r.comment %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
